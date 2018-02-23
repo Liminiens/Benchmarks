@@ -1,8 +1,6 @@
 namespace FSharp
 
-module FindSequenceFSharp =   
-    let list = [3; 1; 2; 10; 12; 228; 11; 1488; 7; 6; 8] |> List.sort
-    
+module FindSequenceFSharp =    
     let (|AddToList|ReplaceListInList|) (numbers, i) = 
         match numbers with   
         |  mainListHead :: _ ->
@@ -23,9 +21,9 @@ module FindSequenceFSharp =
             | mainListHead :: mainListTail ->
                 match mainListHead with 
                 | head :: tail -> 
-                    (i :: head :: tail) :: mainListTail        
-    let getResult =
-        (fun () ->                       
-            list 
-            |> List.fold foldFunction [] 
-            |> List.length)
+                    (i :: head :: tail) :: mainListTail      
+                    
+    let getResult list =                    
+        list 
+        |> Seq.fold foldFunction [] 
+        |> Seq.length

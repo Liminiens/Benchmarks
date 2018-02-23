@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using BenchmarkDotNet.Running;
 using Benchmarks.Benchmarks;
 using FSharp;
@@ -9,8 +11,6 @@ namespace Benchmarks
     {
         static void Main(string[] args)
         {
-            var a = FindSequenceFSharp.getResult();
-            var b = new FindSequenceBenchmark().AggregationImmutable();
             BenchmarkRunner.Run<FindSequenceBenchmark>();
         }
     }

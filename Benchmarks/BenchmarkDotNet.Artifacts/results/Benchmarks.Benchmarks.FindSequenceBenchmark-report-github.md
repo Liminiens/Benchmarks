@@ -9,12 +9,12 @@ Frequency=14318180 Hz, Resolution=69.8413 ns, Timer=HPET
 
 
 ```
-|               Method |       Mean |     Error |    StdDev |
-|--------------------- |-----------:|----------:|----------:|
-| AggregationImmutable | 6,240.2 ns | 74.569 ns | 69.752 ns |
-|   AggregationMutable | 1,478.5 ns | 10.971 ns |  9.725 ns |
-|     ForeachImmutable | 6,527.3 ns | 86.808 ns | 72.489 ns |
-|       ForeachMutable | 1,450.8 ns | 14.792 ns | 13.837 ns |
-|           FsharpFold |   356.4 ns |  7.095 ns |  7.591 ns |
-| ForeachMutableWithIf | 1,416.9 ns | 12.021 ns | 11.244 ns |
-|           ForMutable |   216.1 ns |  3.696 ns |  3.457 ns |
+|               Method |         Mean |       Error |      StdDev |
+|--------------------- |-------------:|------------:|------------:|
+| AggregationImmutable | 11,147.40 us | 119.4633 us | 111.7461 us |
+|   AggregationMutable |    160.24 us |   1.5785 us |   1.4765 us |
+|     ForeachImmutable | 11,160.46 us | 111.3745 us | 104.1798 us |
+|       ForeachMutable |    157.53 us |   3.6666 us |   3.4297 us |
+|           FsharpFold |     48.97 us |   0.5237 us |   0.4373 us |
+| ForeachMutableWithIf |    157.17 us |   2.2582 us |   1.8857 us |
+|           ForMutable |     22.39 us |   0.2051 us |   0.1818 us |

@@ -10,9 +10,17 @@ namespace Benchmarks.Benchmarks
 {
     public class FindSequenceBenchmark
     {
-        private static readonly  ICollection<int> list = ImmutableList
-            .Create(3, 1, 2, 10, 12, 228, 11, 1488, 7, 6, 8).OrderBy(x => x).ToArray();
-        private static readonly int[] List = ImmutableList.Create(3, 1, 2, 10, 12, 228, 11, 1488, 7, 6, 8).OrderBy(x => x).ToArray();
+        private static readonly IEnumerable<int> FSharpEnum;
+        private static readonly int[] List;
+
+        static FindSequenceBenchmark()
+        {
+            var temp = Generator.Get(1000).ToArray();
+            Array.Sort(temp);
+            List = temp;
+            FSharpEnum = temp;
+        }
+
         [Benchmark]
         public int AggregationImmutable()
         {
@@ -94,7 +102,7 @@ namespace Benchmarks.Benchmarks
         [Benchmark]
         public int FsharpFold()
         {
-            return FindSequenceFSharp.getResult();
+            return FindSequenceFSharp.getResult(FSharpEnum);
         }
 
         [Benchmark]
