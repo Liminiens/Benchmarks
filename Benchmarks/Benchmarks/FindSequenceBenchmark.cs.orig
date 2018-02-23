@@ -10,9 +10,13 @@ namespace Benchmarks.Benchmarks
 {
     public class FindSequenceBenchmark
     {
+<<<<<<< HEAD
         private static readonly  ICollection<int> list = ImmutableList
             .Create(3, 1, 2, 10, 12, 228, 11, 1488, 7, 6, 8).OrderBy(x => x).ToArray();
+=======
         private static readonly int[] List = ImmutableList.Create(3, 1, 2, 10, 12, 228, 11, 1488, 7, 6, 8).OrderBy(x => x).ToArray();
+>>>>>>> e3eadef9fd0fab835f6ae80e79ecfbe92c870d99
+
         [Benchmark]
         public int AggregationImmutable()
         {
