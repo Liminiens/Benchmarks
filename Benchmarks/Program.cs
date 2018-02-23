@@ -9,6 +9,8 @@ namespace Benchmarks
     {
         static void Main(string[] args)
         {
+            var a = FindSequenceFSharp.getResult();
+            var b = new FindSequenceBenchmark().AggregationImmutable();
             BenchmarkRunner.Run<FindSequenceBenchmark>();
         }
     }
