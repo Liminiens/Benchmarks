@@ -9,4 +9,8 @@
     <PackageReference Include="BenchmarkDotNet" Version="0.10.12" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FSharp\FSharp.fsproj" />
+  </ItemGroup>
+
 </Project>

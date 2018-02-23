@@ -4,12 +4,14 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using BenchmarkDotNet.Attributes;
+using FSharp;
 
 namespace Benchmarks.Benchmarks
 {
     public class FindSequenceBenchmark
     {
-        private static readonly  ICollection<int> list = ImmutableList.Create(3, 1, 2, 10, 12, 228, 11, 1488, 7, 6, 8).OrderBy(x => x).ToArray();
+        private static readonly  ICollection<int> list = ImmutableList
+            .Create(3, 1, 2, 10, 12, 228, 11, 1488, 7, 6, 8).OrderBy(x => x).ToArray();
 
         [Benchmark]
         public int AggregationImmutable()
@@ -87,6 +89,12 @@ namespace Benchmarks.Benchmarks
                     : ReplaceLastInList(ints2, AddToList(ints2.Last(), i));
             }
             return ints2.Count;
+        }
+
+        [Benchmark]
+        public int FsharpFold()
+        {
+            return FindSequenceFSharp.getResult();
         }
 
         [Benchmark]

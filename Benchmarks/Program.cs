@@ -1,6 +1,7 @@
 ﻿using System;
 using BenchmarkDotNet.Running;
 using Benchmarks.Benchmarks;
+using FSharp;
 
 namespace Benchmarks
 {

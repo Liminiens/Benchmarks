@@ -14,22 +14,23 @@
 <body>
 <pre><code>
 BenchmarkDotNet=v0.10.12, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.248)
-Intel Core i7-4700MQ CPU 2.40GHz (Haswell), 1 CPU, 8 logical cores and 4 physical cores
-Frequency=2338344 Hz, Resolution=427.6531 ns, Timer=TSC
-.NET Core SDK=2.1.2
-  [Host]     : .NET Core 2.0.3 (Framework 4.6.25815.02), 64bit RyuJIT
-  DefaultJob : .NET Core 2.0.3 (Framework 4.6.25815.02), 64bit RyuJIT
+Intel Core i7-3770K CPU 3.50GHz (Ivy Bridge), 1 CPU, 8 logical cores and 4 physical cores
+Frequency=14318180 Hz, Resolution=69.8413 ns, Timer=HPET
+.NET Core SDK=2.1.4
+  [Host]     : .NET Core 2.0.5 (Framework 4.6.26020.03), 64bit RyuJIT  [AttachedDebugger]
+  DefaultJob : .NET Core 2.0.5 (Framework 4.6.26020.03), 64bit RyuJIT
 </code></pre>
 <pre><code></code></pre>
 
 <table>
 <thead><tr><th>        Method</th><th>Mean</th><th>Error</th><th>StdDev</th>
 </tr>
-</thead><tbody><tr><td>AggregationImmutable</td><td>7.646 us</td><td>0.0753 us</td><td>0.0667 us</td>
-</tr><tr><td>AggregationMutable</td><td>1.798 us</td><td>0.0301 us</td><td>0.0267 us</td>
-</tr><tr><td>ForeachImmutable</td><td>8.105 us</td><td>0.0658 us</td><td>0.0615 us</td>
-</tr><tr><td>ForeachMutable</td><td>1.694 us</td><td>0.0102 us</td><td>0.0095 us</td>
-</tr><tr><td>ForeachMutableWithIf</td><td>1.656 us</td><td>0.0064 us</td><td>0.0060 us</td>
+</thead><tbody><tr><td>AggregationImmutable</td><td>6,203.8 ns</td><td>81.498 ns</td><td>76.233 ns</td>
+</tr><tr><td>AggregationMutable</td><td>1,471.8 ns</td><td>9.283 ns</td><td>8.683 ns</td>
+</tr><tr><td>ForeachImmutable</td><td>6,585.2 ns</td><td>72.133 ns</td><td>67.473 ns</td>
+</tr><tr><td>ForeachMutable</td><td>1,416.3 ns</td><td>15.371 ns</td><td>14.378 ns</td>
+</tr><tr><td>FsharpFold</td><td>542.0 ns</td><td>6.581 ns</td><td>6.156 ns</td>
+</tr><tr><td>ForeachMutableWithIf</td><td>1,449.4 ns</td><td>20.184 ns</td><td>18.880 ns</td>
 </tr></tbody></table>
 </body>
 </html>
